@@ -8,7 +8,7 @@ pub fn decipher_message(_morse_message: &str) -> String {
 
 // Declarative macro for creating readable map declarations, for more info see https://doc.rust-lang.org/book/ch19-06-macros.html
 macro_rules! map {
-    ($($key:expr => $value:expr),* $(,)?) => {
+    ($($key:expr => $value:expr),* $(,)*) => {
         std::iter::Iterator::collect(IntoIterator::into_iter([$(($key, $value),)*]))
     };
 }
