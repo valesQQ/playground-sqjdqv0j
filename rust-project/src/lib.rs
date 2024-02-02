@@ -6,16 +6,9 @@ pub fn decipher_message(_morse_message: &str) -> String {
     return answer;
 }
 
-// Declarative macro for creating readable map declarations, for more info see https://doc.rust-lang.org/book/ch19-06-macros.html
-macro_rules! map {
-    ($($key:expr => $value:expr),* $(,)*) => {
-        std::iter::Iterator::collect(IntoIterator::into_iter([$(($key, $value),)*]))
-    };
-}
-
 // Map morse to alphanumeric
 fn _morse_to_alphanumeric_dictionary() -> HashMap<&'static str, &'static str> {
-    std::iter::Iterator::collect(IntoIterator::into_iter([
+HashMap::from([
         (".-", "A"),
         ("-...", "B"),
         ("-.-.", "C"),
@@ -64,5 +57,5 @@ fn _morse_to_alphanumeric_dictionary() -> HashMap<&'static str, &'static str> {
         ("-.--.-", ")"),
         ("-.-.--", "!"),
         ("", ""),
-    ]))
+    ])
 }
