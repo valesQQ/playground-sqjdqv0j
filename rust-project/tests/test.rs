@@ -1,10 +1,14 @@
 extern crate rust_template;
 
-use rust_template::count_all_stars;
+
+use rust_template::decipher_message;
 
 #[test]
 pub fn test_universe() {
-    let expected = 6;
-    let actual = count_all_stars(&[1, 2, 3]);
+    let expected: &str = "SOS ENDOR";
+    let morse_message: &str = "... --- ... / . -. -.. --- .-.";
+    let actual = decipher_message(morse_message);
     assert_eq!(expected, actual);
 }
+
+
