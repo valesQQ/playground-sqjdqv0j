@@ -8,7 +8,8 @@ pub fn test_universe() {
     let expected: &str = "SOS ENDOR";
     let morse_message: &str = "... --- ... / . -. -.. --- .-.";
     let actual = decipher_message(morse_message);
-    assert_eq!(expected, actual);
+    let res = (expected == actual);
+    assert!(res, "Wrong!");
 }
 
 
